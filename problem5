@@ -1,0 +1,17 @@
+# Numbers which are divisible by 10
+num_10 = [x for x in range(10000) if x % 10 == 0]   # numbers that are divisible by 20
+
+outlist = []
+for i_num_10 in num_10:
+    flag = True
+    for i in range(1, 10):
+        if i_num_10 % i != 0:
+            flag = False
+            break
+    if flag is True:
+        outlist.append(i_num_10)
+
+print(outlist[1])
+
+
+
