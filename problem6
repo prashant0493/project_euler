@@ -1,0 +1,8 @@
+# sum of squares of first 10 natural numbers
+# square of sum of first ten natural numbers
+
+element1 = [x**2 for x in range(1, 101)]
+
+element2 = [x for x in range(1, 101)]
+
+print(sum(element2)**2-sum(element1))
