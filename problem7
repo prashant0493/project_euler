@@ -1,0 +1,26 @@
+
+
+
+
+def get_prime_numbers(num):
+    prime_numbers = []
+    for x in range(2, num):
+        flag = True
+        for y in range(2, x):  # prime numbers in the range of given number
+            if x % y == 0:
+                flag = False
+        if flag is True:
+            prime_numbers.append(x)
+    return prime_numbers
+
+
+def get_prime_of_index(index):
+    num = 2
+    prime_numbers = []
+    while len(prime_numbers) != index:
+        prime_numbers = get_prime_numbers(num)
+        num += 1
+    print(prime_numbers[-1])
+
+
+get_prime_of_index(int(input('Please, enter index number of the prime number:\n')))
