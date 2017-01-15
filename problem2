@@ -1,0 +1,32 @@
+# 4 million = 4000000
+# 1 2 3 4 5 6
+# 1 2 3 5 8 13
+
+
+list1 = []
+
+def fibonacci(num):
+    if num == 0:
+        return 0
+    if num == 1:
+        return 1
+    elif num == 2:
+        return 2
+    else:
+        return fibonacci(num-1) + fibonacci(num-2)
+
+i = 0
+while True:
+    if fibonacci(i) > 4000000:
+        break
+    list1.append(fibonacci(i))
+    i += 1
+
+list2 = [x for x in list1 if x % 2 == 0]
+print(list2)
+print(sum(list2))
+
+
+
+
+

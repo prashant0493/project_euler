@@ -1,0 +1,31 @@
+# prime number
+num = 100
+prime = [2, 3, 5, 7]
+for x in range(1,num):
+    flag = 0
+    for y in range(2, 9):
+        if x % y == 0:
+            flag = 1
+    if flag == 0:
+        prime.append(x)
+
+num1 = 13195
+
+factors = set()
+for x in range(1, num1):
+    flag = 0
+    for y in prime:
+        if x % y != 0:
+            factors.add(y)
+
+
+print(prime)
+print(factors)
+
+
+
+
+
+
+
+
