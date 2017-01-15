@@ -1,0 +1,24 @@
+# largest palindrome made by product of 3 digit numbers
+
+
+pal_dict = dict()
+
+for x in range(100, 1000):
+    for y in range(100, 1000):
+        product = x*y
+        product1 = str(product)
+        if product1[::] == product1[::-1]:
+            pal_dict[product] = [x, y]
+
+
+
+print(pal_dict)
+
+list1 = sorted(pal_dict.keys())
+print(list1[-1])
+
+
+
+
+
+
