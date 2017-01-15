@@ -1,31 +1,40 @@
-# prime number
-num = 100
-prime = [2, 3, 5, 7]
-for x in range(1,num):
-    flag = 0
-    for y in range(2, 9):
-        if x % y == 0:
-            flag = 1
-    if flag == 0:
-        prime.append(x)
-
-num1 = 13195
-
-factors = set()
-for x in range(1, num1):
-    flag = 0
-    for y in prime:
-        if x % y != 0:
-            factors.add(y)
+# 2 * 5
+divisible_by = set()
 
 
-print(prime)
-print(factors)
+def get_factors(num):
+    mid = int(num / 2)
+    for x in range(2, mid + 1):  # numbers that can divide input
+        if num % x == 0:
+            divisible_by.add(x)
 
+
+prime_numbers = []
+
+
+def get_prime_numbers(num):
+    for x in range(2, num):
+        flag = True
+        for y in range(2, x):  # prime numbers in the range of given number
+            if x % y == 0:
+                flag = False
+        if flag is True:
+            prime_numbers.append(x)
 
 
 
 
 
+def get_prime_factors(num):
+    get_factors(num)
+    get_prime_numbers(num)
+    print(prime_numbers)
+    prime_factors = []
+    for i in divisible_by:
+        if i in prime_numbers:
+            prime_factors.append(i)
+
+    print(prime_factors[-1])
 
 
+get_prime_factors(int(input('Please enter the number:\t')))
